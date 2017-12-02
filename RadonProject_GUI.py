@@ -10,7 +10,7 @@ from Scanner2DSKI import Scanner2DSKI
 from BackprojectRadon import BackprojectRadon
 
 
-class RadonProject_UI:
+class RadonProject_GUI:
 
     # cv2 images
     inputImage = None
@@ -591,7 +591,7 @@ class RadonProject_UI:
 # start Project GUI
 root = Tk()
 
-p = RadonProject_UI(root)
+p = RadonProject_GUI(root)
 
 root.mainloop()
 
