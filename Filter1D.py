@@ -71,9 +71,13 @@ class Filter1D:
 
     def ramlak_Filter(self, num_points):
         """ Return ramlak filter for numpoints """
-        evenly_spaced_values = np.linspace(-1, 1, num_points)
+        ramlak_filter = np.ones(num_points)
+        evenly_spaced_values = np.linspace(-1, 1, num_points / 4)
         abs_evenly_spaced_values = abs(evenly_spaced_values)
-        return abs_evenly_spaced_values
+        for ii in range(len(abs_evenly_spaced_values)):
+            ramlak_filter[ii + np.int(np.round(3*num_points/8))] = abs_evenly_spaced_values[ii]
+        return ramlak_filter
+
 
     def bias_filtered_values(self, filtered_values):
         """ DC Bias Filtered Values """
